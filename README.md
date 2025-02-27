@@ -1,10 +1,10 @@
-# Beyond APIs: ICWSM 2025 Workshop Website
+# Beyond APIs: WebSci 2025 Workshop Website
 
-This repository contains the website for the "Beyond APIs: Collecting Web Data for Research using the National Internet Observatory" tutorial at ICWSM 2025.
+This repository contains the website for the "Beyond APIs: Collecting Web Data for Research using the National Internet Observatory" tutorial at WebSci 2025.
 
 ## Overview
 
-This is a static website for the ICWSM 2025 workshop that introduces the National Internet Observatory (NIO), an alternative data collection framework and infrastructure designed to help researchers study online behavior. The website provides information about the workshop, including:
+This is a static website for the WebSci 2025 workshop that introduces the National Internet Observatory (NIO), an alternative data collection framework and infrastructure designed to help researchers study online behavior. The website provides information about the workshop, including:
 
 - Workshop abstract and description
 - Prerequisites for participation

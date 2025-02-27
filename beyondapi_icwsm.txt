@@ -1,0 +1,383 @@
+%File: anonymous-submission-latex-2025.tex
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai25}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in} % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in} % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+\DeclareCaptionStyle{ruled}{labelfont=normalfont,labelsep=colon,strut=off} % DO NOT CHANGE THIS
+\lstset{%
+	basicstyle={\footnotesize\ttfamily},% footnotesize acceptable for monospace
+	numbers=left,numberstyle=\footnotesize,xleftmargin=2em,% show line numbers, remove this entire line if you don't want the numbers.
+	aboveskip=0pt,belowskip=0pt,%
+	showstringspaces=false,tabsize=2,breaklines=true}
+\floatstyle{ruled}
+\newfloat{listing}{tb}{lst}{}
+\floatname{listing}{Listing}
+%
+% Keep the \pdfinfo as shown here. There's no need
+% for you to add the /Title and /Author tags.
+\pdfinfo{
+/TemplateVersion (2025.1)
+}
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\usepackage{xcolor}
+\newcommand{\pgnote}[1]{\textcolor{red}{Pranav: #1}}
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai25.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+\title{Beyond APIs: Collecting Web Data for Research using \\ the National Internet Observatory}
+
+\author{
+    %Authors
+    % All authors must be in the same font size and format.
+    Pranav Goel\textsuperscript{\rm *},
+    Kai-Cheng Yang\textsuperscript{\rm *},
+    and
+    Scott Cambo\textsuperscript{\rm *}
+}
+
+\affiliations {
+    % Affiliations
+    National Internet Observatory, Northeastern University, USA\\
+    Network Science Institute, Northeastern University, USA
+}
+% \affiliations{
+%     %Afiliations
+%     Network Science Institute, Northeastern University
+%     % If you have multiple authors and multiple affiliations
+%     % use superscripts in text and roman font to identify them.
+%     % For example,
+
+%     % Sunil Issar\textsuperscript{\rm 2},
+%     % J. Scott Penberthy\textsuperscript{\rm 3},
+%     % George Ferguson\textsuperscript{\rm 4},
+%     % Hans Guesgen\textsuperscript{\rm 5}
+%     % Note that the comma should be placed after the superscript
+%     % email address must be in roman text type, not monospace or sans serif
+%     proceedings-questions@aaai.org
+% %
+% % See more examples next
+% }
+
+%Example, Single Author, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\iffalse
+\title{My Publication Title --- Single Author}
+\author {
+    Author Name
+}
+\affiliations{
+    Affiliation\\
+    Affiliation Line 2\\
+    name@example.com
+}
+\fi
+
+\iffalse
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Multiple Authors}
+\author {
+    % Authors
+    First Author Name\textsuperscript{\rm 1},
+    Second Author Name\textsuperscript{\rm 2},
+    Third Author Name\textsuperscript{\rm 1}
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1}Affiliation 1\\
+    \textsuperscript{\rm 2}Affiliation 2\\
+    firstAuthor@affiliation1.com, secondAuthor@affilation2.com, thirdAuthor@affiliation1.com
+}
+\fi
+
+
+% REMOVE THIS: bibentry
+% This is only needed to show inline citations in the guidelines document. You should not need it and can safely delete it.
+%\usepackage{bibentry}
+% END REMOVE bibentry
+
+\begin{document}
+
+\maketitle
+\def\thefootnote{*}\footnotetext{Equal contribution; joint co-organizers}\def\thefootnote{\arabic{footnote}}
+
+\begin{abstract}
+The Internet serves as a vital platform for information access and global connectivity.
+Widespread online engagement offers unprecedented opportunities to study human behavior at scale, yet researchers face significant ethical and technical barriers when attempting to collect data for academic studies.
+In particular, major social media platforms like Facebook and Twitter have progressively restricted access to their official Application Programming Interfaces (APIs), which previously served as primary tools for researchers to create customized datasets from specific platforms for studying online content production and engagement behavior.
+This tutorial introduces the National Internet Observatory (NIO), an alternative data collection framework and infrastructure designed to help researchers study online behavior, with a particular focus on content viewing---the predominant form of online activity.
+The tutorial presents NIO's informed data donation process, participant demographics and behavioral traces, and secure computing infrastructure.
+The tutorial incorporates interactive activities and hands-on sessions that demonstrate NIO's capabilities for enabling novel cross-disciplinary and cross-platform research across web and social media environments.
+\end{abstract}
+
+% Uncomment the following to link to your code, datasets, an extended version or similar.
+%
+% \begin{links}
+%     \link{Code}{https://aaai.org/example/code}
+%     \link{Datasets}{https://aaai.org/example/datasets}
+%     \link{Extended version}{https://aaai.org/example/extended-version}
+% \end{links}
+
+\section{Introduction}
+
+Individuals are increasingly spending a significant portion of their lives online.
+Currently, more than half of the world’s population has access to the Internet,\footnote{\url{internetlivestats.com/internet-users}} with notably higher percentages in developed countries (e.g., 89\% of US adults, \citet{center2019internet}).
+Dominant platforms like Google, Facebook, and YouTube are used by the majority of US adults,~\cite{smith2018social},\footnote{\url{statista.com/topics/1001/google}; \url{pewinternet.org/2018/03/01/social-media-use-in-2018}; \url{youtube.com/intl/en-GB/yt/about/press}} while several other platforms, such as Twitter and Instagram, serve a smaller yet sizable portion of the population~\cite{smith2018social}.\footnote{\url{statista.com/topics/1882/instagram}}
+%The Internet plays a pivotal role in connecting people and serves as a primary medium for obtaining and disseminating information.
+The shift towards more extensive online engagement worldwide presents unique opportunities for researchers across various disciplines to study human behavior on an unprecedented scale.
+
+%\footnote{\url{statista.com/topics/1001/google}; \url{pewinternet.org/2018/03/01/social-media-use-in-2018}; \url{youtube.com/intl/en-GB/yt/about/press}} 
+
+However, virtually none of this data is available for academic research.
+The vast amount of data created about online human behavior is siloed, proprietary, with problematic scientific foundations, and often collected in ways that are on ethically shaky grounds.
+%While useful studies have been conducted on the Internet and society in communication research, the current major instruments available for open science face severe limitations.
+Many existing studies focus on X/Twitter, Reddit, and Wikipedia.
+The collected datasets, however, are often not publicly available (e.g., X's terms of service forbid the sharing of tweets); are siloed; are rarely well documented and thus not replicable~\cite{gaffney2018caveat}; and are often decontextualized from other information about individuals.
+The collection of such data has also become increasingly challenging and restricted in recent years, marking the transition into a ``Post-API'' era, with Facebook shutting down key APIs in 2018 after the Cambridge Analytica scandal~\cite{freelon2018computational,bruns2021after}, and the effective closure of the Twitter/X API in early 2023---a data collection tool that has been at the heart of vast amounts of social media research~\cite{murtfeldt2024rip}.
+
+Some researchers rely on data from vendors, including Nielsen, Comscore, and YouGov, who maintain panels of subjects and monitor their online activities.
+Although such data provide unique insights, there are a number of problems associated with the vendors.
+For example, Comscore and Nielsen are optimized for commercial clients, with pricing structures often incompatible with academic budgets.
+These data collection systems are entirely proprietary, making it impossible to assess many dimensions of scientific validity, from sample to instrumentation quality.
+Moreover, the ethical practices of these vendors are often non-transparent.
+
+Other common limitations of the current instruments include (i) the focus on production behavior (content created and shared by users), as opposed to consumption behavior or exposure to content created by others; and (ii) an emphasis on a limited set of platforms, especially Twitter, which was often chosen due to the relative ease of data availability.
+%In short, there is a pressing need for a scientifically rigorous infrastructure for academics to study behavior on the Internet. %comprehensively.
+
+NIO aims to help address these challenges by serving as an open, large-scale, secure, and privacy-preserving observatory of online behavior to enable academic research without relying on bespoke data collection, proprietary sources, or partnerships with industry~\cite{feal2024introduction}.
+Participants of NIO install a browser extension and/or mobile apps to donate their online activity data along with comprehensive survey responses.
+The infrastructure offers approved researchers access to a suite of structured, parsed content data for selected domains to enable analyses and understanding of Internet use in the US.
+This is all conducted within a robust research ethics framework, emphasizing ongoing informed consent and multiple layers, technical and legal, of interventions to protect the values at stake in data collection, data access, and research~\cite{meyer_enhancing_2023}.
+
+This tutorial aims to provide a brief overview of the NIO infrastructure, the data collected, the participants, and the researcher intake process.
+Further, the organizers will present concrete examples of research being conducted with this new source of data, in order to motivate and inform tutorial participants' own ideas around the kind of research they can conduct with NIO.
+This tutorial will be interactive, as the organizers will gather participant requests for specific data analyses both before the conference and at the start of the tutorial; the organizers will then present some of those analyses towards the end of the tutorial in order to highlight analytic and research possibilities with NIO, grounded in participants' own aspirations.
+There will also be a facilitated hands-on session where participants will themselves interact with and explore an aggregated, de-identified dataset built using NIO, such as browsing trajectories, data on time spent on various web domains, demographics of users visiting a variety of websites, etc.
+An open-ended discussion with participants will enable feedback for future data products NIO can provide to the research community.
+
+\section{Type of tutorial: free-style}
+
+% The type of tutorial you are proposing: lecture-style, hands-on, translation, case study, or free-style.
+
+%\pgnote{I am still confused between `Lecture-style' and `Free-style' (see descriptions under CfP -- Tutorials at icwsm.org/2025/submit/index.html); `Free-style' may need more assurances on interactivity and `practical skills'. Open to either, need to think which will improve our chances of acceptance and fits better. }
+
+\section{Organizers}
+
+% Checklist
+% - names
+% - affiliations
+% - emails
+% - personal websites
+% - main contact author
+% - no more than three presenters
+% - more people can be involved in the organization
+
+This tutorial will be jointly organized by:
+
+\textbf{Dr. Pranav Goel}\footnote{p.goel@northeastern.edu;  \url{pranav-goel.github.io}} is the primary contact person for the tutorial.
+Dr. Goel is a Postdoctoral Research Associate at the Network Science Institute, Northeastern University, USA.
+He obtained his PhD in Computer Science from the University of Maryland, College Park.
+His research interests span computational social science \& natural language processing, including text-as-data applications in computational political science, analyzing framing in news and social media, and understanding misinformation narratives, and improving topic model evaluation and their ability to assist practitioners.
+Currently, he is exploring cross-platform news consumption patterns, assessing the digital local news landscape, and studying the interaction between self-reported survey data and behaviors drawn from observed trace data.
+He has previously helped organize a related tutorial on ``New Approaches and Data Sources to Study Digital Media and Democracy'' at IC2S2 2024.
+His research has been published at top conferences, including winning the `Outstanding Study Design' award at ICWSM 2023.
+
+\textbf{Dr. Kai-Cheng Yang}\footnote{yang3kc@gmail.com;  \url{www.kaichengyang.me}} is a Postdoctoral Research Associate at the Network Science Institute, Northeastern University, USA.
+He obtained his PhD in Informatics from the Luddy School of Informatics, Computing, and Engineering at Indiana University Bloomington.
+His research aims to create safe, fair, and trustworthy online information platforms by identifying how malicious actors and flawed systems distort information flow and developing effective countermeasures.
+His work spans social bots, misinformation, and algorithmic biases.
+Currently, he is exploring how generative AI is being misused in these contexts and how to harness this technology to protect against these threats.
+He built popular tools, such as Botometer, that have served tens of thousands of users.
+He organized the tutorial ``Identifying social media manipulation with OSoMe tools'' at IC2S2 2020, the video recording of which is available at \url{www.youtube.com/watch?v=1BMv0PrdVGs}.
+He also organized the tutorial ``Exploring emerging social media: acquiring, processing, and visualizing data with Python and OSoMe web tools'' at IC2S2 2024, the website for which is available at \url{osome.iu.edu/events/ic2s2-2024-workshop}.
+
+\textbf{Dr. Scott Allen Cambo}\footnote{s.cambo@northeastern.edu; \url{www.scottallencambo.com}} is a Senior Data Scientist and Head of Data Science at the National Internet Observatory at Northeastern University, USA.
+He earned his PhD in Technology and Social Behavior from Northwestern University.
+His research explores and validates computational methods for analyzing subjective differences between both manual labeling approaches using crowdsourced labor and automated labeling approaches using machine learning.
+In his private sector work, Scott has held a variety of critical data science roles at civic tech and responsible AI startups where he developed products for Human-AI Collaboration and designed an algorithm auditing process for NYC LL 144 (\url{nyc.gov/site/dca/about/automated-employment-decision-tools.page}). More recently, he served as General Manager for the AI Incident Database (\url{incidentdatabase.ai}) where he worked with both the Center for Advancing Safety in Machine Intelligence (CASMI, \url{casmi.northwestern.edu}) and Underwriters Laboratory Research Institute (ULRI, \url{ul.org/institutes-offices/digital-safety}) to improve the way we collect, annotate, and share data regarding AI harm.
+
+
+
+\section{Duration}
+
+% A short timeline description of how you plan to break down the material over the proposed duration (1, 2, 4, or 8 hours). Please mention here the proposed duration, but keep in mind that the Tutorial Chairs might conditionally accept a proposal and suggest a different duration to best fit the organization of the whole event.
+
+The proposed duration of this tutorial is 3 hours.
+This tutorial is intended to be one continuous half-day session.
+
+\section{Tutorial schedule and activities}
+
+% A description of the proposed tutorial format, a schedule of the proposed activities (e.g., presentations, interactive sessions) along with a *detailed* description for each of them.
+
+\begin{table*}[h]
+\centering
+\caption{\textbf{NIO tutorial schedule.} The whole tutorial is 3 hours (180 minutes) long.}
+\label{tab:schedule}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{l|p{0.2\textwidth}|p{0.65\textwidth}}
+\hline
+\textbf{Duration} & \textbf{Activity} & \textbf{Description} \\
+\hline
+25m & NIO Overview & Overview presentation on NIO infrastructure, data collection basics, and research vision. Discussion of existing frameworks for online activity data collection across disciplines and their pros/cons. \\
+\hline
+20m & Interactive data analysis: requests gathering & Gathering participant requests for data analyses on platform-specific content, trace data vs survey responses, cross-platform behavior, etc. \\
+\hline
+10m & Break & \\
+\hline
+20m & Data collection (in depth) & Presentation on Mobile, Desktop, and Survey Data. Includes mechanisms of data collection, organized data collections and data products for research, and sample size estimates. Provides various concrete examples of the format of the collected data and what, precisely, gets captured. \\
+\hline
+20m & Research findings & Presentation on some existing analyses and research that uses NIO data. Highlights concrete research possibilities. \\
+\hline
+30m & Hands-on dataset exploration session & Participants access and explore an aggregated dataset built using NIO on their own machines, to get a practical sense of the data output possible with NIO. \\
+\hline
+10m & Break & \\
+\hline
+30m & Interactive data analysis: results presentation & Presenting requested data analyses. Demonstrating analyses requested by participants earlier. \\
+\hline
+15m & Q\&A $+$ Future datasets feedback & Open-ended Q\&A session with all participants, and space for feedback about what participants would like NIO to collect that is not being currently collected. \\
+\hline
+\end{tabular}}
+\end{table*}
+
+Our tutorial consists of different sections, including presentations and interactive activities (see Table~\ref{tab:schedule} for details).
+
+In preparation for the tutorial, we will create a website that includes an overview about NIO, explaining the data collected, and help participants decide what kind of aggregated analyses they would like to see.
+
+Our tutorial contains multiple interactive activities.
+In the months before the conference, we will leverage the curiosity and expertise of the NIO and ICWSM
+%WebSci
+communities by soliciting ideas via social media and our website for data analyses that the community would like to see presented at the ICWSM
+%WebSci
+tutorial.
+Using these proposed ideas as an example, we will demonstrate how NIO's review process works and how such analyses would be performed on NIO's computing resources.
+We will similarly invite such requests during the tutorial, and aim to deliver some of the requested analyses towards the end of the tutorial.
+
+We will also provide and facilitate access to an aggregated, de-identified dataset built using NIO, which participants will explore by themselves on their machines to understand at least one concrete example of the kind of data NIO can produce.
+This could include rich data on web domains, such as visits per various demographic groups, time spent on domains, and a variety of potential independent variables from survey response data that can be studied for their association with domain-visit activity.
+
+We will conduct an open-ended session at the end for general Q\&As as well as feedback for future datasets from NIO---the tutorial participants will get a chance to actively shape the future of this new research data source.
+
+%\pgnote{Potentially something to add throughout is: promise to release at least one aggregated dataset publicly (can give examples of what that would look like), and an interactive activity will be playing with that data guided by maybe our own jupyter notebook to guide that data's exploration?}
+
+\section{Target audience, prerequisites, and outcomes}
+
+% A description of the target audience, the prerequisite skill set for the attendee (if any) as well as a brief list of goals for the tutors to accomplish by the end of the tutorial.
+
+The tutorial is designed for academic researchers from all disciplines represented at the ICWSM
+%WebSci
+conference.
+There are no formal prerequisites for participation.
+We encourage anyone interested in online activity data collection and research to join.
+While a background in digital behavioral research helps participants better understand the challenges and opportunities that NIO presents, it is not required to learn about this new data collection infrastructure.
+
+By the end of the tutorial, participants will:
+
+\begin{enumerate}
+    \item Learn about various methods of online activity data collection along with their pros and cons.
+    \item Learn about a new infrastructure and framework for data collection in the post-API age.
+    \item Learn about the research and analytical possibilities enabled by NIO and data donations, including the cross-platform potential of working with participants browsing activity, the kinds of research enabled by trace data being linked with survey data, and the interdisciplinary uses of these alternative data collection methods.
+    \item Understand the data collected by NIO and how it could inform their own ongoing or future research.
+\end{enumerate}
+
+\section{Materials}
+
+% The organizers of accepted tutorials will be required to set up a web page containing all the information for the tutorial attendees before the tutorial day (roughly 2 weeks before the tutorial day).
+% The proposal should contain the list of materials that will be made available on the website.
+
+%As stated above, in addition to all the specific contents of the tutorial, our website will provide an overview of NIO's infrastructure and data collection, and include a form for prospective participants to submit requests for aggregated data analyses that they would like to see presented at the tutorial.
+Overall, the tutorial website will include:
+
+\begin{enumerate}
+    \item Tutorial abstract.
+    \item Broad overview of NIO's vision for enabling academic research using online web activity.
+    \item Overview of all various types of data collected by NIO.
+    \item Participant sample summary: sample size and sizes of various demographic groups.
+    \item Detailed NIO ethics framework, per \citet{meyer_enhancing_2023}.
+    \item Form for submitting open-ended comments and questions around the challenges and opportunities of working with NIO data, and more generally, working with alternative data collection frameworks like NIO.
+    \item Form for submitting requests for aggregated data analyses that the organizers should present at the tutorial.
+\end{enumerate}
+
+
+\section{Past precedent}
+
+% A list of other tutorials held previously at related conferences, if any, together with a brief statement on how the proposed tutorial relates to previous events. If the authors of the proposal have organized other tutorials in the past, pointers to the relevant material (e.g., slides, videos, web pages, code) should be provided.
+
+This exact tutorial has not been offered before.
+However, NIO was introduced in a previous tutorial at the International Conference on Computational Social Science (IC2S2) 2024 conference, as part of and an example of new approaches to digital behavioral data collection in the post-API age. The tutorial was titled ``New Approaches and Data Sources to Study Digital Media and Democracy'' (website: \url{digidem-ic2s2.github.io/2024}).
+
+The proposed tutorial offers an in-depth guide to data collection and research enabled by NIO and how US-based participants can apply for access to start working with NIO data.
+Moreover, the tutorial covers the processes and various components involved in alternative, privacy-preserving modes of data collection that do not depend on platforms.% and respect the privacy of participants.
+
+
+
+\bibliography{aaai25}
+
+\end{document}

@@ -2,6 +2,8 @@
 
 This repository contains the website for the "Beyond APIs: Collecting Web Data for Research using the National Internet Observatory" tutorial at WebSci 2025.
 
+The website is live at https://national-internet-observatory.github.io/beyondapi_websci25
+
 ## Overview
 
 This is a static website for the WebSci 2025 workshop that introduces the National Internet Observatory (NIO), an alternative data collection framework and infrastructure designed to help researchers study online behavior. The website provides information about the workshop, including:

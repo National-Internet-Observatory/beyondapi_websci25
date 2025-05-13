@@ -312,7 +312,6 @@ footer {
 section {
     padding-top: 20px;
     margin-bottom: 40px;
-    min-height: 50vh; /* Ensure sections have enough height for scrolling */
 }
 
 /* Styles for organizer headshots and layout */
